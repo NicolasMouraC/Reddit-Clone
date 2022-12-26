@@ -6,6 +6,8 @@ font-family: 'Roboto', sans-serif;*/
 * {
   box-sizing: border-box;
   font-size: calc(10px + 2vmin);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .App {
@@ -15,27 +17,67 @@ font-family: 'Roboto', sans-serif;*/
                         "toolbar main main";
   
   font-family: 'Roboto', sans-serif;
+  background-color: #DAE0E7;
 }
 
+
+/*-------------*/
 /* Header Css */
+/*-------------*/
 header {
   grid-area: header;
-  background-color: blue;
+  position: sticky;
+  top: 0;
+  background-color: #f2f8fc;
   box-shadow: 0 3px 0 #edf3fc;
+  padding: 10px 20px;
 }
 
-header > .navBar {
-  display: inline-flex;
-  max-width: 1280px;
-  padding: 0 20;
-  flex-grow: 1;
-}
-
-header > .title {
-  font-size: calc(12px + 3vmin);
+.title {
   font-family: 'IBM Plex Sans', sans-serif;
+  font-size: calc(1rem + 0.325vw);
+  margin-left: 10px;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.minimal {
+  color: blue;
+  font-size: inherit;
+}
+
+.header-input {
+  display: flex;
+}
+
+.searchBar {
+  width: 70%;
+  padding: 10px 15px 10px 50px;
+  border-radius: 20px;
+  margin-top: 5px;
+  border: 1px;
+  background-image: url(https://cdn-icons-png.flaticon.com/512/49/49116.png);
+  background-position: 2% 50%;
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    justify-content: center;
+  }
+  .header-input {
+    justify-content: center;
+  }
+}
+
+
+/*-------------*/
+/* Main Container Css */
+/*-------------*/
 .main-container {
   grid-area: main;
   display: grid;
@@ -45,7 +87,10 @@ header > .title {
   margin: 25px 0 0 25px;
 }
 
+
+/*-------------*/
 /* ToolBar Css */
+/*-------------*/
 .toolbar {
   grid-area: toolbar;
   background-color: greenyellow;
@@ -53,7 +98,10 @@ header > .title {
   width: 100%;
 }
 
+
+/*-------------*/
 /* Hot Posts Css */
+/*-------------*/
 .hot-posts {
   grid-area: hot;
   display: grid;
@@ -72,31 +120,36 @@ header > .title {
   padding: 20px;
 }
 
+
+/*-------------*/
 /* Posts Css */
+/*-------------*/
 .post {
   grid-area: post;
   background-color: red;
   height: 300px;
   width: 100%;
+  border-radius: 4px;
+  padding-left: 40px;
 }
 
+.post-title {
+  word-break: break-word;
+}
+
+.post-img {
+  max-width: 512px;
+  max-height: 512px;
+}
+
+
+/*-------------*/
 /* Lateral bar Css */ 
+/*-------------*/
 .bar {
   grid-area: bar;
   background-color: orange;
   height: 300px;
   width: 100%;
   
-}
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
