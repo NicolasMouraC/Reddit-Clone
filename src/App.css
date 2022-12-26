@@ -10,9 +10,9 @@ font-family: 'Roboto', sans-serif;*/
 
 .App {
   display: grid;
-  grid-template-areas: "header header header header header"
-                        "toolbar hot hot hot hot"
-                        "toolbar post post post bar";
+  grid-template-areas: "header header header"
+                        "toolbar main main"
+                        "toolbar main main";
   
   font-family: 'Roboto', sans-serif;
 }
@@ -34,6 +34,15 @@ header > .navBar {
 header > .title {
   font-size: calc(12px + 3vmin);
   font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.main-container {
+  grid-area: main;
+  display: grid;
+  grid-template-areas: "hot hot hot"
+                        "post post bar";
+  gap: 25px;
+  margin: 25px 0 0 25px;
 }
 
 /* ToolBar Css */
