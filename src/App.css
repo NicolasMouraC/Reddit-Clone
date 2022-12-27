@@ -22,6 +22,10 @@ font-family: 'Noto Sans*/
   background-color: #DAE0E7;
 }
 
+span {
+  font-size: 18px;
+}
+
 
 /*-------------*/
 /* Header Css */
@@ -39,7 +43,7 @@ header {
 .title {
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: calc(1rem + 0.325vw);
-  margin-left: 10px;
+  margin: 0 0 0 10px;
 }
 
 .logo {
@@ -68,16 +72,6 @@ header {
   background-repeat: no-repeat;
 }
 
-@media (max-width: 768px) {
-  .logo {
-    justify-content: center;
-  }
-  .header-input {
-    justify-content: center;
-  }
-}
-
-
 /*-------------*/
 /* Main Container Css */
 /*-------------*/
@@ -96,9 +90,36 @@ header {
 /*-------------*/
 .toolbar {
   grid-area: toolbar;
-  background-color: greenyellow;
-  height: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f8fc;
+  height: 100vh;
   width: 100%;
+  position: sticky;
+  top: 78px;
+  color: #878a8c;
+  padding: 15px 0 0 15px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 10px 0 20px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.icon:hover {
+  background-color: #e9ecef;
 }
 
 
@@ -164,7 +185,7 @@ header {
 .post {
   grid-area: post;
   background-color: red;
-  height: 300px;
+  height: 3000px;
   width: 100%;
   border-radius: 4px;
   padding-left: 40px;
@@ -200,20 +221,39 @@ header {
     grid-template-areas: "header header"
                           "main main"
                           "main main";
+    overflow: hidden;
   }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .header-input {
+    justify-content: center;
+  }
+
   .toolbar {
     display: none;
   }
+
   .bar {
     display: none;
   }
+
   .main-container {
     grid-template-areas: "hot hot"
                           "post post";
   }
+
+  .hot-post {
+    margin-left: 10%;
+  }
+
   .post {
     margin-top: 20px;
+    margin-left: 20px;
   }
+
   .main-container {
     margin: 0;
   }
