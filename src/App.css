@@ -182,13 +182,19 @@ header {
 /*-------------*/
 /* Posts Css */
 /*-------------*/
-.post {
+.posts {
   grid-area: post;
   background-color: red;
-  height: 3000px;
-  width: 100%;
-  border-radius: 4px;
-  padding-left: 40px;
+  height: 100%;
+  width: 90%;
+  margin-left: 10px;
+}
+
+.post {
+  height: 100%;
+  background-color: #f2f8fc;
+  padding: 20px 0px 20px 40px;
+  margin-bottom: 20px;
 }
 
 .post-title {
@@ -198,6 +204,11 @@ header {
 .post-img {
   max-width: 512px;
   max-height: 512px;
+}
+
+.post-description {
+  display: flex;
+
 }
 
 
@@ -249,7 +260,7 @@ header {
     margin-left: 10%;
   }
 
-  .post {
+  .posts {
     margin-top: 20px;
     margin-left: 20px;
   }
