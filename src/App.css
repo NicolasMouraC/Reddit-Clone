@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 /*font-family: 'IBM Plex Sans', sans-serif;
-font-family: 'Roboto', sans-serif;*/
+font-family: 'Roboto', sans-serif;
+font-family: 'Noto Sans*/
 
 * {
   box-sizing: border-box;
@@ -31,6 +33,7 @@ header {
   background-color: #f2f8fc;
   box-shadow: 0 3px 0 #edf3fc;
   padding: 10px 20px;
+  z-index: 10000;
 }
 
 .title {
@@ -60,7 +63,7 @@ header {
   margin-top: 5px;
   border: 1px;
   background-image: url(https://cdn-icons-png.flaticon.com/512/49/49116.png);
-  background-position: 2% 50%;
+  background-position: 2% center;
   background-size: 30px;
   background-repeat: no-repeat;
 }
@@ -104,20 +107,54 @@ header {
 /*-------------*/
 .hot-posts {
   grid-area: hot;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 2%;
-  gap: 20px;
-  background-color: yellow;
-  height: 300px;
   width: 100%;
 }
 
-.hot-posts > .hot-post {
+.hot-post {
   background-color: white;
+  height: 165px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.hot-post-image {
+  width: fit-content;
+  position: relative;
   height: 100%;
-  width: 100%;
-  padding: 20px;
+}
+
+.hot-post-image > img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.hot-post-text {
+  padding: 0 10px 10px 10px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hot-post-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.hot-post-description {
+  font-family: 'Noto Sans' ,Arial,sans-serif;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  word-break: break-word;
+  line-height: 20px;
+  max-height: 40px;
 }
 
 
@@ -152,4 +189,32 @@ header {
   height: 300px;
   width: 100%;
   
+}
+
+
+/*-------------*/
+/* Responsive Css*/
+/*-------------*/
+@media (max-width: 768px) {
+  .App {
+    grid-template-areas: "header header"
+                          "main main"
+                          "main main";
+  }
+  .toolbar {
+    display: none;
+  }
+  .bar {
+    display: none;
+  }
+  .main-container {
+    grid-template-areas: "hot hot"
+                          "post post";
+  }
+  .post {
+    margin-top: 20px;
+  }
+  .main-container {
+    margin: 0;
+  }
 }
