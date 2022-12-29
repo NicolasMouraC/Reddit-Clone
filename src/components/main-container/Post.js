@@ -20,7 +20,7 @@ const Post = () => {
                 <div className="post-description">
                     <span>Posted by <span className="post-description-author">Author</span></span>
                     <span>7 Hours ago</span>
-                    <button className="post-description-comments-button" type="button"><MdComment />725</button>
+                    <button className="icon" type="button"><MdComment />725</button>
                 </div>
             </div>
             

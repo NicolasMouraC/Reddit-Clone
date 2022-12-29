@@ -6,6 +6,8 @@ const Posts = () => {
         <section className='posts'>
                     <Post />
                     <Post />
+                    <Post />
+                    <Post />
         </section>
     )
 }
