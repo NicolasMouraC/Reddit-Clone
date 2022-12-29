@@ -1,5 +1,4 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import HotPost from "./HotPost";
@@ -7,20 +6,20 @@ import HotPost from "./HotPost";
 const HotPosts = () => {
     return (
         <section className="hot-posts">
-            <Row>
-                <Col sm={6} md={3}>
-                    <HotPost />
-                </Col>
-                <Col sm={6} md={3}>
-                    <HotPost />
-                </Col>
-                <Col sm={6} md={3}>
-                    <HotPost />
-                </Col>
-                <Col sm={6} md={3}>
-                    <HotPost />
-                </Col>
-            </Row>
+                <Row>
+                    <Col sm={6} md={3}>
+                        <HotPost />
+                    </Col>
+                    <Col sm={6} md={3}>
+                        <HotPost />
+                    </Col>
+                    <Col sm={6} md={3}>
+                        <HotPost />
+                    </Col>
+                    <Col sm={6} md={3}>
+                        <HotPost />
+                    </Col>
+                </Row>
         </section>
     )
 }

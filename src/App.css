@@ -23,7 +23,7 @@ font-family: 'Noto Sans*/
 }
 
 span {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 
@@ -81,7 +81,7 @@ header {
   grid-template-areas: "hot hot hot"
                         "post post bar";
   gap: 25px;
-  margin: 25px 0 0 25px;
+  padding: 25px 0 0 25px;
 }
 
 
@@ -128,13 +128,12 @@ header {
 /*-------------*/
 .hot-posts {
   grid-area: hot;
-  width: 100%;
+  padding-right: 20px;
 }
 
 .hot-post {
   background-color: white;
   height: 165px;
-  width: 250px;
   border-radius: 10px;
 }
 
@@ -166,7 +165,7 @@ header {
 }
 
 .hot-post-description {
-  font-family: 'Noto Sans' ,Arial,sans-serif;
+  font-family: 'Noto Sans', Arial,sans-serif;
   color: white;
   font-size: 16px;
   font-weight: 400;
@@ -184,31 +183,75 @@ header {
 /*-------------*/
 .posts {
   grid-area: post;
-  background-color: red;
   height: 100%;
-  width: 90%;
-  margin-left: 10px;
+  width: 80%;
+  margin-left: 30px;
 }
 
 .post {
-  height: 100%;
   background-color: #f2f8fc;
-  padding: 20px 0px 20px 40px;
+  padding: 20px 40px 20px 80px;
+  border-radius: 4px;
   margin-bottom: 20px;
+  min-width: 500px;
+  height: fit-content;
+  position: relative;
 }
 
 .post-title {
   word-break: break-word;
+  margin-bottom: 5px;
+  font-size: 18px;
 }
 
 .post-img {
-  max-width: 512px;
-  max-height: 512px;
+  max-width: 600px;
+  max-height: 600px;
 }
 
 .post-description {
   display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+}
 
+.post-description-author {
+  color: blue;
+}
+
+.post-description-comments-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 10px 0 20px;
+  border-radius: 10px;
+}
+
+.post-description-comments-button:hover {
+  background-color: #e9ecef;
+}
+
+.post-vote-arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 18px 0 0 18px;
+}
+
+.post-vote-arrow-button {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.post-vote-arrow-button:hover {
+  background-color: #e9ecef;
+}
+
+.post-vote-arrows-votes {
+  font-size: 14px;
 }
 
 
@@ -258,11 +301,12 @@ header {
 
   .hot-post {
     margin-left: 10%;
+    width: 250px;
   }
 
   .posts {
-    margin-top: 20px;
-    margin-left: 20px;
+    margin: 20px 0 0 0;
+    width: 100%;
   }
 
   .main-container {
