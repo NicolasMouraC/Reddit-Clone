@@ -23,7 +23,7 @@ font-family: 'Noto Sans*/
 }
 
 span {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 
@@ -80,8 +80,9 @@ header {
   display: grid;
   grid-template-areas: "hot hot hot"
                         "post post bar";
+  grid-template-columns: 50% 25% auto;
   gap: 25px;
-  margin: 25px 0 0 25px;
+  padding: 25px 0 0 25px;
 }
 
 
@@ -128,14 +129,14 @@ header {
 /*-------------*/
 .hot-posts {
   grid-area: hot;
-  width: 100%;
+  padding-right: 20px;
 }
 
 .hot-post {
   background-color: white;
   height: 165px;
-  width: 250px;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .hot-post-image {
@@ -166,7 +167,7 @@ header {
 }
 
 .hot-post-description {
-  font-family: 'Noto Sans' ,Arial,sans-serif;
+  font-family: 'Noto Sans', Arial,sans-serif;
   color: white;
   font-size: 16px;
   font-weight: 400;
@@ -182,46 +183,122 @@ header {
 /*-------------*/
 /* Posts Css */
 /*-------------*/
-.post {
+.posts {
   grid-area: post;
-  background-color: red;
-  height: 3000px;
-  width: 100%;
+  height: 100%;
+  width: 80%;
+  margin-left: 20px;
+}
+
+.post {
+  background-color: #f2f8fc;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px 40px 20px 80px;
   border-radius: 4px;
-  padding-left: 40px;
+  margin-bottom: 20px;
+  min-width: 500px;
+  height: fit-content;
+  position: relative;
 }
 
 .post-title {
   word-break: break-word;
+  margin-bottom: 5px;
+  font-size: 18px;
 }
 
 .post-img {
-  max-width: 512px;
-  max-height: 512px;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+.post-description {
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+}
+
+.post-description-author {
+  color: blue;
+}
+
+.post-vote-arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 18px 0 0 18px;
+}
+
+.post-vote-arrow-button {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.post-vote-arrow-button:hover {
+  background-color: #e9ecef;
+}
+
+.post-vote-arrows-votes {
+  font-size: 14px;
 }
 
 
 /*-------------*/
 /* Lateral bar Css */ 
 /*-------------*/
-.bar {
+.lateral-bar {
   grid-area: bar;
-  background-color: orange;
-  height: 300px;
-  width: 100%;
-  
+  width: fit-content;
+}
+
+.lateral-bar-info {
+  background-color: #f2f8fc;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.lateral-bar-button  {
+  color: #878a8c;
+  text-decoration: none;
+}
+
+.lateral-bar-button > .icon {
+  width: calc(100% * 1vh);
 }
 
 
 /*-------------*/
 /* Responsive Css*/
 /*-------------*/
+@media (max-width: 895px) { 
+  .main-container {
+    grid-template-areas: "hot hot hot"
+                        ". bar ."
+                        "post post post";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .hot-posts {
+    width: 100%;
+  }
+
+  .lateral-bar {
+    margin: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .App {
-    grid-template-areas: "header header"
-                          "main main"
-                          "main main";
-    overflow: hidden;
+    grid-template-areas: "header header header"
+                          "main main main"
+                          "main main main";
+
   }
 
   .logo {
@@ -236,25 +313,38 @@ header {
     display: none;
   }
 
-  .bar {
-    display: none;
-  }
 
   .main-container {
-    grid-template-areas: "hot hot"
-                          "post post";
+    grid-template-areas: "hot hot hot"
+                          ". bar ."
+                          "post post post";
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 25px 10px 25px 10px;
+  }
+
+  .hot-posts {
+    padding-right: 0;
   }
 
   .hot-post {
-    margin-left: 10%;
+    margin: 10px 0 10px 0;
   }
 
-  .post {
-    margin-top: 20px;
-    margin-left: 20px;
+  .posts {
+    margin: 20px 0 0 0;
+    padding: 0;
+    width: 100%;
   }
 
-  .main-container {
-    margin: 0;
+  .lateral-bar {
+    margin: auto;
+  }
+}
+
+@media (max-width: 595px) {
+
+  .hot-post {
+    width: fit-content;
+    margin: 10px auto 10px auto;
   }
 }
