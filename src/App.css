@@ -212,6 +212,11 @@ header {
   max-height: 600px;
 }
 
+.post-img > img {
+  width: 50%;
+  height: 50%;
+}
+
 .post-description {
   display: flex;
   font-size: 12px;

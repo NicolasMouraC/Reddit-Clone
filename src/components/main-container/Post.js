@@ -3,24 +3,25 @@ import { MdComment } from 'react-icons/md';
 import { HiArrowUp } from 'react-icons/hi';
 import { HiArrowDown } from 'react-icons/hi';
 
-const Post = () => {
+const Post = (props) => {
+    const { author, imgSrc, score, comments, title, imgWidth, imgHeight } = props;
     return (
         <div className="post">
             <div className="post-vote-arrows">
                 <button type="button" className="post-vote-arrow-button"><HiArrowUp size='1.2rem' /></button>
-                <span className="post-vote-arrows-votes">3.2k</span>
+                <span className="post-vote-arrows-votes">{score}</span>
                 <button type="button" className="post-vote-arrow-button"><HiArrowDown size='1.2rem' /></button>
             </div>
             <div className='post-title'>
-            Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+            {title}
             </div>
             <div className="post-img">
-                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" alt='Placeholder' />
+                {imgSrc !== 'self' ? <img src={imgSrc} alt={imgSrc} /> : null}
                 <hr />
                 <div className="post-description">
-                    <span>Posted by <span className="post-description-author">Author</span></span>
+                    <span>Posted by <span className="post-description-author">{author}</span></span>
                     <span>7 Hours ago</span>
-                    <button className="icon" type="button"><MdComment />725</button>
+                    <button className="icon" type="button"><MdComment />{comments}</button>
                 </div>
             </div>
             
