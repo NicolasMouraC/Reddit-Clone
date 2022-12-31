@@ -35,6 +35,8 @@ const Posts = () => {
                                 isVideo={el.data.is_video}
                                 videoUrl={el.data.is_video ? el.data.media['reddit_video'].fallback_url : {}}
                                 redditCommentsLink={el.data.permalink}
+                                communityName={el.data.subreddit_name_prefixed}
+                                utc={el.data.created}
                                 key={el.data.name}
                                 />})
                     : null

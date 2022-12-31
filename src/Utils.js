@@ -4,15 +4,15 @@ export const checkIfIsImage = (imgSrc) => {
 
 export const videoElement = (videoUrl) => {
     return (
-        <video controls>
-            <source src={videoUrl} type="video/mp4" />
-        </video>
+            <video controls>
+                <source src={videoUrl}/>
+            </video>
     )
 }
 
 export const imageElement = (imgSrc) => {
     return (
-        <img src={imgSrc} alt={imgSrc} />
+        <img src={imgSrc} alt={imgSrc} loading="lazy"/>
     )
 }
 
@@ -26,6 +26,10 @@ export const commentsElement = (commentsUrl) => {
     )
 }
 
-export const utcToDate = () => {
-
+export const utcToDate = (postDateUtc) => {
+    const nowDate = new Date();
+    const postDate = new Date(postDateUtc * 1000);
+    console.log(nowDate)
+    console.log(postDate)
+    return Math.round((Math.abs((nowDate.getTime() - postDate.getTime()) / (1000 * 60 * 60))))
 }

@@ -36,7 +36,7 @@ header {
   top: 0;
   background-color: #f2f8fc;
   box-shadow: 0 3px 0 #edf3fc;
-  padding: 10px 20px;
+  padding: 0px 20px;
   z-index: 10000;
 }
 
@@ -97,7 +97,7 @@ header {
   height: 100vh;
   width: 100%;
   position: sticky;
-  top: 78px;
+  top: 55px;
   color: #878a8c;
   padding: 15px 0 0 15px;
 }
@@ -202,9 +202,20 @@ header {
   padding: 20px 40px 20px 80px;
   border-radius: 4px;
   margin-bottom: 20px;
-  min-width: 500px;
   height: fit-content;
   position: relative;
+}
+
+.post-community {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 5px 5px 5px 0;
+}
+
+.post-community:hover {
+  background-color: #e9ecef;
 }
 
 .post-title {
@@ -241,7 +252,7 @@ header {
   border-radius: 10px;
 }
 
-.post-description > a {
+.post a {
   color: inherit;
   text-decoration: none;
   font-size: 14px;
@@ -348,7 +359,7 @@ header {
                           ". bar ."
                           "post post post";
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 25px 10px 25px 10px;
+    padding: 25px 15px 25px 15px;
   }
 
   .hot-posts {
@@ -365,12 +376,16 @@ header {
     width: 100%;
   }
 
-  .lateral-bar {
-    margin: auto;
-  }
 }
 
 @media (max-width: 595px) {
+  .post {
+    padding: 20px 40px 20px 60px;
+  }
+
+  .post-vote-arrows {
+    margin: 9px 5px 0 9px;
+  }
 
   .hot-post {
     width: fit-content;

@@ -1,11 +1,12 @@
 import React from "react";
 import { MdComment } from 'react-icons/md';
-import { HiArrowUp } from 'react-icons/hi';
-import { HiArrowDown } from 'react-icons/hi';
-import { checkIfIsImage, videoElement, imageElement, commentsElement } from "../../Utils.js";
+import { HiArrowUp, HiArrowDown } from 'react-icons/hi';
+import { FcReddit } from 'react-icons/fc'
+import { checkIfIsImage, videoElement, imageElement, commentsElement, utcToDate } from "../../Utils.js";
 
 const Post = (props) => {
-    const { author, imgSrc, score, comments, title, isVideo, videoUrl, redditCommentsLink } = props;
+    const { author, imgSrc, score, comments, title, isVideo, videoUrl, redditCommentsLink, communityName, utc } = props;
+    console.log(utc)
 
     return (
         <div className="post">
@@ -15,6 +16,7 @@ const Post = (props) => {
                 <button type="button" className="post-vote-arrow-button"><HiArrowDown size='1.2rem' /></button>
             </div>
 
+            <a href={"https://reddit.com/" + communityName}><button className="post-community"><FcReddit/> {communityName}</button></a>
             <div className='post-title'>
                 {title}
             </div>
@@ -24,7 +26,7 @@ const Post = (props) => {
                 <hr />
                 <div className="post-description">
                     <span>Posted by <span className="post-description-author">{author}</span></span>
-                    <span>7 Hours ago</span>
+                    <span>{utcToDate(utc)} Hours ago</span>
                     <a href={"https://reddit.com" + redditCommentsLink}>
                         <button className="comments-icon" type="button">
                             <MdComment />{comments}
