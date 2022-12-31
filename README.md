@@ -1,5 +1,4 @@
-# App currently in development
-# To see the progress, use the link below
+# App currently in development. To see the progress, use the link below
 ### https://nicolasmourac.github.io/Reddit-Clone/
 
 # Getting Started with Create React App
