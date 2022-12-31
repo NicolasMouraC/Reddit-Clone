@@ -1,3 +1,7 @@
+# App currently in development
+# To see the progress, use the link below
+### https://nicolasmourac.github.io/Reddit-Clone/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
