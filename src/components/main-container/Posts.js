@@ -33,8 +33,9 @@ const Posts = () => {
                                 score={el.data.score} 
                                 comments={el.data.num_comments} 
                                 author={el.data.author}
-                                imgWidth={el.data.preview ? el.data.preview['images'][0].source.width : {}}
-                                imgHeight={el.data.preview ? el.data.preview['images'][0].source.height : {}}
+                                isVideo={el.data.is_video}
+                                videoUrl={el.data.is_video ? el.data.media['reddit_video'].fallback_url : {}}
+                                redditCommentsLink={el.data.permalink}
                                 />})
                     : null
                 }
