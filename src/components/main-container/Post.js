@@ -2,18 +2,11 @@ import React from "react";
 import { MdComment } from 'react-icons/md';
 import { HiArrowUp } from 'react-icons/hi';
 import { HiArrowDown } from 'react-icons/hi';
-
-const videoElement = (videoUrl) => {
-    return (
-        <video width="320" height="240" controls >
-            <source src={videoUrl} type="video/mp4" />
-        </video>
-    )
-}
+import { checkIfIsImage, videoElement, imageElement, commentsElement } from "../../Utils.js";
 
 const Post = (props) => {
     const { author, imgSrc, score, comments, title, isVideo, videoUrl, redditCommentsLink } = props;
-    console.log(videoUrl)
+
     return (
         <div className="post">
             <div className="post-vote-arrows">
@@ -27,12 +20,16 @@ const Post = (props) => {
             </div>
 
             <div className="post-img">
-                {isVideo ? videoElement(videoUrl) : (imgSrc.match(/\.(jpeg|jpg|gif|png)$/) != null) ? <img src={imgSrc} alt={imgSrc}  /> : null}
+                {isVideo ? videoElement(videoUrl) : checkIfIsImage(imgSrc) ? imageElement(imgSrc) : commentsElement(redditCommentsLink)}
                 <hr />
                 <div className="post-description">
                     <span>Posted by <span className="post-description-author">{author}</span></span>
                     <span>7 Hours ago</span>
-                    <button className="icon" type="button"><a href={"https://reddit.com" + redditCommentsLink}><MdComment />{comments}</a></button>
+                    <a href={"https://reddit.com" + redditCommentsLink}>
+                        <button className="comments-icon" type="button">
+                            <MdComment />{comments}
+                        </button>
+                    </a>
                 </div>
             </div>
             

@@ -15,10 +15,8 @@ const Posts = () => {
             const data = await fetch('https://www.reddit.com/r/popular.json');
             const dataJson = await data.json();
 
-            // const title = dataJson.data.children[1].data.title;
             const postss = dataJson.data.children;
             dispatch(getPost({ posts: postss }));
-            //console.log(posts[0].data.preview.images[0].source.width)
         }
 
         fetchData();
@@ -26,6 +24,7 @@ const Posts = () => {
 
     return (
         <section className='posts'>
+            <span className="posts-header">Posts</span>
             {isLoaded ? posts.map(el => {
                     return <Post
                                 title={el.data.title} 
@@ -36,6 +35,7 @@ const Posts = () => {
                                 isVideo={el.data.is_video}
                                 videoUrl={el.data.is_video ? el.data.media['reddit_video'].fallback_url : {}}
                                 redditCommentsLink={el.data.permalink}
+                                key={el.data.name}
                                 />})
                     : null
                 }
