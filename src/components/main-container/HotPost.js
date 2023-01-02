@@ -1,13 +1,16 @@
 import React from "react";
+import { checkIfIsImage } from "../../Utils.js";
 
-const HotPost = () => {
+const HotPost = (props) => {
+    const { author, imgSrc, title } = props;
+
     return (
         <div className='hot-post'>
             <div className="hot-post-image">
-                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" alt="Placeholder"/>
+                {checkIfIsImage(imgSrc) ? <img  src={imgSrc} alt={imgSrc}/> : <img src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/2016/png/iconmonstr-reddit-4.png&r=8&g=65&b=255" alt="image"/>}
                 <div className="hot-post-text">
-                    <h2 className="hot-post-title">Title</h2>
-                    <h3 className="hot-post-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+                    <h2 className="hot-post-title">{author}</h2>
+                    <h3 className="hot-post-description">{title}</h3>
                 </div>
             </div>
         </div>

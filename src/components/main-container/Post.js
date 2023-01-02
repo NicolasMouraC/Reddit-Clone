@@ -6,7 +6,6 @@ import { checkIfIsImage, videoElement, imageElement, commentsElement, utcToDate 
 
 const Post = (props) => {
     const { author, imgSrc, score, comments, title, isVideo, videoUrl, redditCommentsLink, communityName, utc } = props;
-    console.log(utc)
 
     return (
         <div className="post">

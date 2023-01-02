@@ -3,25 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 export const postsSlice = createSlice({
     name: "posts",
     initialState: {
-        posts: [
-            {
-                data: {
-                    title: 'Title'
-                }
-            },
-        ],
-        isLoaded: false
+        posts: [],
+        isPostsLoaded: false
     },
     reducers: {
         getPost: (state, action) => {
-            state.isLoaded = false;
+            state.isPostsLoaded = false;
             state.posts = action.payload.posts
-            state.isLoaded = true;
+            state.isPostsLoaded = true;
         }
     }
 })
 
 export const selectPosts = (state) => state.posts.posts;
-export const selectIsLoaded = (state) => state.posts.isLoaded;
+export const selectIsPostsLoaded = (state) => state.posts.isPostsLoaded;
 export const { getPost } = postsSlice.actions;
 export default postsSlice.reducer

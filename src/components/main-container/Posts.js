@@ -1,25 +1,19 @@
 import React, { useState } from "react";
 import Post from "./Post";
 import { useSelector, useDispatch } from "react-redux";
-import { selectIsLoaded } from "../../api/PostsSlice";
-import { selectPosts } from "../../api/PostsSlice";
-import { getPost } from "../../api/PostsSlice";
+import { selectIsPostsLoaded } from "../../api/PostsSlice.js";
+import { selectPosts } from "../../api/PostsSlice.js";
+import { getPost } from "../../api/PostsSlice.js";
+import { fetchData } from "../../Utils.js";
 
 const Posts = () => {
     const dispatch = useDispatch();
-    const isLoaded = useSelector(selectIsLoaded);
+    const isLoaded = useSelector(selectIsPostsLoaded);
     const posts = useSelector(selectPosts);
 
-    useState(() => {
-        async function fetchData() {
-            const data = await fetch('https://www.reddit.com/r/popular.json');
-            const dataJson = await data.json();
-
-            const postss = dataJson.data.children;
-            dispatch(getPost({ posts: postss }));
-        }
-
-        fetchData();
+    useState(async () => {
+            const posts = await fetchData('https://www.reddit.com/r/popular.json')
+            dispatch(getPost({ posts: posts }));
     }, [])
 
     return (
