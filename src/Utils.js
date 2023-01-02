@@ -29,7 +29,12 @@ export const commentsElement = (commentsUrl) => {
 export const utcToDate = (postDateUtc) => {
     const nowDate = new Date();
     const postDate = new Date(postDateUtc * 1000);
-    console.log(nowDate)
-    console.log(postDate)
     return Math.round((Math.abs((nowDate.getTime() - postDate.getTime()) / (1000 * 60 * 60))))
+}
+
+export async function fetchData(url) {
+    const data = await fetch(url);
+    const dataJson = await data.json();
+
+    return dataJson.data.children;
 }

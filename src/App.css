@@ -125,50 +125,53 @@ header {
 
 
 /*-------------*/
-/* Hot Posts Css */
+/* New Posts Css */
 /*-------------*/
-.hot-posts {
+.new-posts {
   grid-area: hot;
   padding-right: 20px;
 }
 
-.hot-post {
+.new-post {
   background-color: white;
   height: 165px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.hot-post-image {
-  width: fit-content;
+.new-post-image {
+  width: 100%;
   position: relative;
   height: 100%;
 }
 
-.hot-post-image > img {
+.new-post-image > img {
   height: 100%;
+  background-size: contain;
+  width: 100%;
   object-fit: cover;
   border-radius: 10px;
+  filter: brightness(60%);
 }
 
-.hot-post-text {
+.new-post-text {
   padding: 0 10px 10px 10px;
   position: absolute;
   bottom: 0;
   display: flex;
   flex-direction: column;
+  font-family: 'Noto Sans';
+  color: white;
 }
 
-.hot-post-title {
-  color: white;
+.new-post-title {
   font-size: 20px;
   font-weight: 500;
   line-height: 22px;
 }
 
-.hot-post-description {
+.new-post-description {
   font-family: 'Noto Sans', Arial,sans-serif;
-  color: white;
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
@@ -324,7 +327,7 @@ header {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .hot-posts {
+  .new-posts {
     width: 100%;
   }
 
@@ -362,11 +365,11 @@ header {
     padding: 25px 15px 25px 15px;
   }
 
-  .hot-posts {
+  .new-posts {
     padding-right: 0;
   }
 
-  .hot-post {
+  .new-post {
     margin: 10px 0 10px 0;
   }
 
@@ -387,7 +390,7 @@ header {
     margin: 9px 5px 0 9px;
   }
 
-  .hot-post {
+  .new-post {
     width: fit-content;
     margin: 10px auto 10px auto;
   }
