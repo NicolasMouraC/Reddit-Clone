@@ -26,6 +26,7 @@ npm start
 To initiallize the server on localhost.
 
 ### 📌 Version changes
+* 0.3.0 - Reddit new posts integration with app through json api
 * 0.2.1 - Responsive posts section
 * 0.2.0 - Reddit posts integration with app through json api
 * 0.1.1 - Page stylized with css
