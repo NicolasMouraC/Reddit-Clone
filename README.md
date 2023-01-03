@@ -10,19 +10,19 @@ React app that uses Reddit API to sdisplay posts and interacts with real Reddit.
 
 ### 🔧 Run Locally
 On your terminal, first type:
-'''
-git clone git@github.com:NicolasMouraC/Reddit-Clone.git
-'''
+
+`git clone git@github.com:NicolasMouraC/Reddit-Clone.git`
+
 To clone the repository.
 Then type:
-'''
-npm install
-''' 
+
+`npm install`
+
 To install dependencies.
 Finally, type:
-'''
-npm start
-'''
+
+`npm start`
+
 To initiallize the server on localhost.
 
 ### 📌 Version changes
