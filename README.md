@@ -1,5 +1,5 @@
 # Reddit Minimal
-React app that uses Reddit API to sdisplay posts and interacts with real Reddit.
+React app that uses Reddit API to display posts and interacts with real Reddit.
 [See this project online](https://nicolasmourac.github.io/Reddit-Clone/)
 
 ### 🛠️ Build with
