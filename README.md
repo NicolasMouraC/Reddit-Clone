@@ -1,5 +1,5 @@
 # Reddit Minimal
-React app that uses Reddit API to sdisplay posts and interacts with real Reddit.
+React app that uses Reddit API to display posts and interacts with real Reddit.
 [See this project online](https://nicolasmourac.github.io/Reddit-Clone/)
 
 ### 🛠️ Build with
@@ -10,22 +10,23 @@ React app that uses Reddit API to sdisplay posts and interacts with real Reddit.
 
 ### 🔧 Run Locally
 On your terminal, first type:
-'''
-git clone git@github.com:NicolasMouraC/Reddit-Clone.git
-'''
+
+`git clone git@github.com:NicolasMouraC/Reddit-Clone.git`
+
 To clone the repository.
 Then type:
-'''
-npm install
-''' 
+
+`npm install`
+
 To install dependencies.
 Finally, type:
-'''
-npm start
-'''
+
+`npm start`
+
 To initiallize the server on localhost.
 
 ### 📌 Version changes
+* 0.3.0 - Reddit new posts integration with app through json api
 * 0.2.1 - Responsive posts section
 * 0.2.0 - Reddit posts integration with app through json api
 * 0.1.1 - Page stylized with css
