@@ -8,15 +8,13 @@ import { BiBitcoin } from 'react-icons/bi';
 import { GiComputing } from 'react-icons/gi';
 import { AiFillStar } from 'react-icons/ai';
 import { useDispatch } from "react-redux";
-import { setNewTopic } from "../api/TopicsSlice.js";
+import { setNewTopic } from "../slices/TopicsSlice.js";
 
 const ToolBar = () => {
     const dispatch = useDispatch();
 
-    const handleClick = (e) => {
-        console.log(e.target)
-
-        //useDispatch(setNewTopic({ newTopic: value }))
+    const handleClick = (newTopic) => {
+        dispatch(setNewTopic({ newTopic: newTopic }));
     } 
 
     return (
@@ -34,27 +32,27 @@ const ToolBar = () => {
             </div>
             <div className="category">
                 Topics
-                <button className="icon" type="button" value="sports" onClick={handleClick}>
+                <button className="icon" type="button" onClick={() => handleClick('sports')}>
                     <MdSportsTennis />
                     <span>Sports</span>
                 </button>
-                <button className="icon" type="button" value="gaming" onClick={handleClick}>
+                <button className="icon" type="button" onClick={() => handleClick('gaming')}>
                     <IoGameController />
                     <span>Gaming</span>
                 </button>
-                <button className="icon" type="button" value="business" onClick={handleClick}>
+                <button className="icon" type="button" onClick={() => handleClick('business')}>
                     <AiOutlineStock />
                     <span>Business</span>
                 </button>
-                <button className="icon" type="button" value="crypto" onClick={handleClick}>
+                <button className="icon" type="button" onClick={() => handleClick('crypto')}>
                     <BiBitcoin />
                     <span>Crypto</span>
                 </button>
-                <button className="icon" type="button" value="programming" onClick={handleClick}>
+                <button className="icon" type="button" onClick={() => handleClick('programming')}>
                     <GiComputing />
                     <span>Programming</span>
                 </button>
-                <button className="icon" type="button" value="celebrities" onClick={handleClick}>
+                <button className="icon" type="button" onClick={() => handleClick('celebrities')}>
                     <AiFillStar />
                     <span>Celebrities</span>
                 </button>

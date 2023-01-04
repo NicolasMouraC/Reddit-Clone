@@ -1,20 +1,27 @@
-import React, { useState } from "react";
-import Post from "./Post";
+import React, { useEffect } from "react";
+import Post from "./Post.js";
 import { useSelector, useDispatch } from "react-redux";
-import { selectIsPostsLoaded } from "../../api/PostsSlice.js";
-import { selectPosts } from "../../api/PostsSlice.js";
-import { getPost } from "../../api/PostsSlice.js";
+import { selectIsPostsLoaded } from "../../slices/PostsSlice.js";
+import { selectPosts } from "../../slices/PostsSlice.js";
+import { selectTopic } from "../../slices/TopicsSlice.js";
+import { getPost } from "../../slices/PostsSlice.js";
 import { fetchData } from "../../Utils.js";
 
 const Posts = () => {
     const dispatch = useDispatch();
     const isLoaded = useSelector(selectIsPostsLoaded);
     const posts = useSelector(selectPosts);
+    const topic = useSelector(selectTopic);
 
-    useState(async () => {
-            const posts = await fetchData('https://www.reddit.com/r/popular.json')
+    useEffect(() => {
+        async function data(topic) {
+            const posts = await fetchData(`https://www.reddit.com/r/${topic}.json`);
             dispatch(getPost({ posts: posts }));
-    }, [])
+        }
+
+        data(topic);
+    // eslint-disable-next-line
+    }, [topic])
 
     return (
         <section className='posts'>

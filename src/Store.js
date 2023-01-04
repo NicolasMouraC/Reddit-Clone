@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import postsReducer from "./api/PostsSlice.js";
-import newPostsReducer from "./api/NewPostsSlice.js";
-import topicReducer from "./api/TopicsSlice.js";
+import postsReducer from "./slices/PostsSlice.js";
+import newPostsReducer from "./slices/NewPostsSlice.js";
+import topicReducer from "./slices/TopicsSlice.js";
 
 export default configureStore({
     reducer: {

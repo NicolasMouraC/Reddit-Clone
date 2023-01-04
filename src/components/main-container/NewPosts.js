@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import NewPost from "./NewPost.js";
 import { useSelector, useDispatch } from "react-redux";
-import { selectNewPosts } from "../../api/NewPostsSlice.js";
-import { selectIsNewPostsLoaded } from "../../api/NewPostsSlice.js";
-import { getNewPosts } from "../../api/NewPostsSlice.js";
+import { selectNewPosts } from "../../slices/NewPostsSlice.js";
+import { selectIsNewPostsLoaded } from "../../slices/NewPostsSlice.js";
+import { getNewPosts } from "../../slices/NewPostsSlice.js";
 import { checkIfIsImage, fetchData } from "../../Utils.js";
 
 const NewPosts = () => {
@@ -13,16 +13,21 @@ const NewPosts = () => {
     const isLoaded = useSelector(selectIsNewPostsLoaded);
     const newPosts = useSelector(selectNewPosts);
 
-    useState(async () => {
-        const newPosts = await fetchData("https://www.reddit.com/r/popular/new.json");
+    useEffect(() => {
+        async function data() {
+            const newPosts = await fetchData("https://www.reddit.com/r/popular/new.json");
 
-        const onlyWithImages = newPosts.filter(el => {
-            return checkIfIsImage(el.data.url);
-        })
-        
-        const newPostsSlice = onlyWithImages.slice(0, 4);
-        dispatch(getNewPosts({ newPosts: newPostsSlice }))
-    })
+            const onlyWithImages = newPosts.filter(el => {
+                return checkIfIsImage(el.data.url);
+            })
+            
+            const newPostsSlice = onlyWithImages.slice(0, 4);
+            dispatch(getNewPosts({ newPosts: newPostsSlice }))
+        }
+
+        data();
+    // eslint-disable-next-line
+    }, [])
 
     return (
         <section className="new-posts">

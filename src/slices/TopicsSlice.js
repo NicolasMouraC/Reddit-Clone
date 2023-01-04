@@ -7,11 +7,11 @@ export const topicSlice = createSlice({
     },
     reducers: {
         setNewTopic: (state, action) => {
-            state.topic = action.newTopic;
+            state.topic = action.payload.newTopic;
         }
     }
 })
 
 export const selectTopic = (state) => state.topic.topic;
-export const { setNewTopic } = topicSlice.reducer;
+export const { setNewTopic } = topicSlice.actions;
 export default topicSlice.reducer;
