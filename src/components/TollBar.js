@@ -2,11 +2,16 @@ import React from "react";
 import { MdSportsTennis } from 'react-icons/md';
 import { IoGameController } from 'react-icons/io5';
 import { AiOutlineStock } from 'react-icons/ai';
-import { IoHome } from 'react-icons/io5';
 import { FaHotjar } from 'react-icons/fa';
 import { BiBitcoin } from 'react-icons/bi';
 import { GiComputing } from 'react-icons/gi';
 import { AiFillStar } from 'react-icons/ai';
+import { GiDango } from 'react-icons/gi';
+import { MdOutlineMilitaryTech } from 'react-icons/md';
+import { FaMusic } from 'react-icons/fa';
+import { BiCameraMovie } from 'react-icons/bi';
+import { MdScience } from 'react-icons/md';
+import { FaRobot } from 'react-icons/fa';
 import { useDispatch } from "react-redux";
 import { setNewTopic } from "../slices/TopicsSlice.js";
 
@@ -20,11 +25,7 @@ const ToolBar = () => {
     return (
         <section className='toolbar'>
             <div className="category">
-                Feeds
-                <button className="icon" type="button" onClick={() => handleClick('popular')}>
-                    <IoHome />
-                    <span>Home</span>
-                </button>
+                Home
                 <button className="icon" type="button" onClick={() => handleClick('popular')}>
                     <FaHotjar />
                     <span>Popular</span>
@@ -55,6 +56,30 @@ const ToolBar = () => {
                 <button className="icon" type="button" onClick={() => handleClick('celebrities')}>
                     <AiFillStar />
                     <span>Celebrities</span>
+                </button>
+                <button className="icon" type="button" onClick={() => handleClick('anime')}>
+                    <GiDango />
+                    <span>Anime</span>
+                </button>
+                <button className="icon" type="button" onClick={() => handleClick('military')}>
+                    <MdOutlineMilitaryTech />
+                    <span>Military</span>
+                </button>
+                <button className="icon" type="button" onClick={() => handleClick('music')}>
+                    <FaMusic />
+                    <span>Music</span>
+                </button>
+                <button className="icon" type="button" onClick={() => handleClick('movies')}>
+                    <BiCameraMovie />
+                    <span>Movies</span>
+                </button>
+                <button className="icon" type="button" onClick={() => handleClick('technology')}>
+                    <FaRobot />
+                    <span>Technology</span>
+                </button>
+                <button className="icon" type="button" onClick={() => handleClick('science')}>
+                    <MdScience />
+                    <span>Science</span>
                 </button>
             </div>
         </section>

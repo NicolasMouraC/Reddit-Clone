@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Post from "./Post.js";
+import PostSkeleton from "./PostSkeleton.js";
 import { useSelector, useDispatch } from "react-redux";
 import { selectIsPostsLoaded } from "../../slices/PostsSlice.js";
 import { selectPosts } from "../../slices/PostsSlice.js";
@@ -41,7 +42,7 @@ const Posts = () => {
                                 utc={el.data.created}
                                 key={el.data.name}
                                 />})
-                    : <div className="loading-div"><span className="loading-text">Loading posts...</span></div>
+                    : <PostSkeleton />
                 }
         </section>
     )
