@@ -26,6 +26,9 @@ Finally, type:
 To initiallize the server on localhost.
 
 ### 📌 Version changes
+* 0.4.2 - Posts skeleton on load added
+* 0.4.1 - New subjects added
+* 0.4.0 - Posts subject now changes through sidebar button interaction 
 * 0.3.0 - Reddit new posts integration with app through json api
 * 0.2.1 - Responsive posts section
 * 0.2.0 - Reddit posts integration with app through json api
