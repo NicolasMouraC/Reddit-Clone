@@ -7,8 +7,10 @@ export const postsSlice = createSlice({
         isPostsLoaded: false
     },
     reducers: {
+        toggleIsLoaded: (state, action) => {
+            state.isPostsLoaded = (!state.isPostsLoaded)
+        },
         getPost: (state, action) => {
-            state.isPostsLoaded = false;
             state.posts = action.payload.posts
             state.isPostsLoaded = true;
         }
@@ -17,5 +19,5 @@ export const postsSlice = createSlice({
 
 export const selectPosts = (state) => state.posts.posts;
 export const selectIsPostsLoaded = (state) => state.posts.isPostsLoaded;
-export const { getPost } = postsSlice.actions;
+export const {  toggleIsLoaded, getPost } = postsSlice.actions;
 export default postsSlice.reducer
