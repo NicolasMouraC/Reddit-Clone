@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Reddit-Clone/static/css/main.a5300233.css",
-    "main.js": "/Reddit-Clone/static/js/main.9797fcbb.js",
+    "main.js": "/Reddit-Clone/static/js/main.65705f9f.js",
     "index.html": "/Reddit-Clone/index.html",
     "main.a5300233.css.map": "/Reddit-Clone/static/css/main.a5300233.css.map",
-    "main.9797fcbb.js.map": "/Reddit-Clone/static/js/main.9797fcbb.js.map"
+    "main.65705f9f.js.map": "/Reddit-Clone/static/js/main.65705f9f.js.map"
   },
   "entrypoints": [
     "static/css/main.a5300233.css",
-    "static/js/main.9797fcbb.js"
+    "static/js/main.65705f9f.js"
   ]
 }
