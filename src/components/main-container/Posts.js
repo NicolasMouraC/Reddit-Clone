@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectIsPostsLoaded } from "../../slices/PostsSlice.js";
 import { selectPosts } from "../../slices/PostsSlice.js";
 import { selectTopic } from "../../slices/TopicsSlice.js";
-import { getPost } from "../../slices/PostsSlice.js";
+import { toggleIsLoaded, getPost } from "../../slices/PostsSlice.js";
 import { fetchData } from "../../Utils.js";
 
 const Posts = () => {
@@ -15,6 +15,7 @@ const Posts = () => {
 
     useEffect(() => {
         async function data(topic) {
+            dispatch(toggleIsLoaded());
             const posts = await fetchData(`https://www.reddit.com/r/${topic}.json`);
             dispatch(getPost({ posts: posts }));
         }
@@ -25,7 +26,7 @@ const Posts = () => {
 
     return (
         <section className='posts'>
-            <span className="posts-header">Posts</span>
+            <span className="posts-header">{topic.toUpperCase()} Posts</span>
             {isLoaded ? posts.map(el => {
                     return <Post
                                 title={el.data.title} 
@@ -40,7 +41,7 @@ const Posts = () => {
                                 utc={el.data.created}
                                 key={el.data.name}
                                 />})
-                    : null
+                    : <div className="loading-div"><span className="loading-text">Loading posts...</span></div>
                 }
         </section>
     )

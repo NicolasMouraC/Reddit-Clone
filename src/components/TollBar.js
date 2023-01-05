@@ -21,11 +21,11 @@ const ToolBar = () => {
         <section className='toolbar'>
             <div className="category">
                 Feeds
-                <button className="icon" type="button">
+                <button className="icon" type="button" onClick={() => handleClick('popular')}>
                     <IoHome />
                     <span>Home</span>
                 </button>
-                <button className="icon" type="button">
+                <button className="icon" type="button" onClick={() => handleClick('popular')}>
                     <FaHotjar />
                     <span>Popular</span>
                 </button>
