@@ -5,6 +5,13 @@
 font-family: 'Roboto', sans-serif;
 font-family: 'Noto Sans*/
 
+:root{
+  --sky-400: rgb(14 165 233);
+  --sky-500: rgb(14 165 233);
+  --sky-600: rgb(2 132 199);
+  --sky-700: rgb(3 105 161);
+}
+
 * {
   box-sizing: border-box;
   font-size: calc(10px + 2vmin);
@@ -98,7 +105,6 @@ header {
   width: 100%;
   position: sticky;
   top: 55px;
-  color: #878a8c;
   padding: 15px 0 0 15px;
 }
 
@@ -117,6 +123,7 @@ header {
   margin: 0 10px 0 20px;
   border-radius: 10px;
   padding: 5px;
+  color: var(--sky-500);
 }
 
 .icon:hover {
@@ -194,9 +201,10 @@ header {
 }
 
 .posts-header {
-  color: #878a8c;
+  font-weight: bolder;
   font-size: 16px;
   margin-bottom: 10px;
+  color: var(--sky-600);
 }
 
 .post {
@@ -255,6 +263,10 @@ header {
   border-radius: 10px;
 }
 
+.comments-icon:hover {
+  background-color: #e9ecef;
+}
+
 .post a {
   color: inherit;
   text-decoration: none;
@@ -262,7 +274,7 @@ header {
 }
 
 .post-description-author {
-  color: blue;
+  color: var(--sky-600);
 }
 
 .post-vote-arrows {
@@ -273,6 +285,7 @@ header {
   top: 0;
   left: 0;
   margin: 18px 0 0 18px;
+  color: var(--sky-500);
 }
 
 .post-vote-arrow-button {
@@ -286,6 +299,7 @@ header {
 
 .post-vote-arrows-votes {
   font-size: 14px;
+  color: var(--sky-700);
 }
 
 

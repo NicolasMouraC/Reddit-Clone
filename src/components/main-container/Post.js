@@ -8,11 +8,11 @@ const Post = (props) => {
     const { author, imgSrc, score, comments, title, isVideo, videoUrl, redditCommentsLink, communityName, utc } = props;
 
     return (
-        <div className="post">
+        <article className="post">
             <div className="post-vote-arrows">
-                <button type="button" className="post-vote-arrow-button"><HiArrowUp size='1.2rem' /></button>
+                <button type="button" className="post-vote-arrow-button" aria-label="Up Button"><HiArrowUp size='1.2rem' /></button>
                 <span className="post-vote-arrows-votes">{score}</span>
-                <button type="button" className="post-vote-arrow-button"><HiArrowDown size='1.2rem' /></button>
+                <button type="button" className="post-vote-arrow-button" aria-label="Down Button"><HiArrowDown size='1.2rem' /></button>
             </div>
 
             <a href={"https://reddit.com/" + communityName}><button className="post-community"><FcReddit/> {communityName}</button></a>
@@ -28,13 +28,13 @@ const Post = (props) => {
                     <span>{utcToDate(utc)} Hours ago</span>
                     <a href={"https://reddit.com" + redditCommentsLink}>
                         <button className="comments-icon" type="button">
-                            <MdComment />{comments}
+                            <MdComment color="rgb(14 165 233)"/>{comments}
                         </button>
                     </a>
                 </div>
             </div>
             
-        </div>
+        </article>
     )
 }
 

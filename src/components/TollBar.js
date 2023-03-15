@@ -28,58 +28,58 @@ const ToolBar = () => {
                 Home
                 <button className="icon" type="button" onClick={() => handleClick('popular')}>
                     <FaHotjar />
-                    <span>Popular</span>
+                    <span style={{color : "black"}}>Popular</span>
                 </button>
             </div>
             <div className="category">
                 Topics
                 <button className="icon" type="button" onClick={() => handleClick('sports')}>
                     <MdSportsTennis />
-                    <span>Sports</span>
+                    <span style={{color : "black"}}>Sports</span>
                 </button>
                 <button className="icon" type="button" onClick={() => handleClick('gaming')}>
                     <IoGameController />
-                    <span>Gaming</span>
+                    <span style={{color : "black"}}>Gaming</span>
                 </button>
                 <button className="icon" type="button" onClick={() => handleClick('business')}>
                     <AiOutlineStock />
-                    <span>Business</span>
+                    <span style={{color : "black"}}>Business</span>
                 </button>
                 <button className="icon" type="button" onClick={() => handleClick('crypto')}>
                     <BiBitcoin />
-                    <span>Crypto</span>
+                    <span style={{color : "black"}}>Crypto</span>
                 </button>
                 <button className="icon" type="button" onClick={() => handleClick('programming')}>
                     <GiComputing />
-                    <span>Programming</span>
+                    <span style={{color : "black"}}>Programming</span>
                 </button>
                 <button className="icon" type="button" onClick={() => handleClick('celebrities')}>
                     <AiFillStar />
-                    <span>Celebrities</span>
+                    <span style={{color : "black"}}>Celebrities</span>
                 </button>
                 <button className="icon" type="button" onClick={() => handleClick('anime')}>
                     <GiDango />
-                    <span>Anime</span>
+                    <span style={{color : "black"}}>Anime</span>
                 </button>
                 <button className="icon" type="button" onClick={() => handleClick('military')}>
                     <MdOutlineMilitaryTech />
-                    <span>Military</span>
+                    <span style={{color : "black"}}>Military</span>
                 </button>
                 <button className="icon" type="button" onClick={() => handleClick('music')}>
                     <FaMusic />
-                    <span>Music</span>
+                    <span style={{color : "black"}}>Music</span>
                 </button>
                 <button className="icon" type="button" onClick={() => handleClick('movies')}>
                     <BiCameraMovie />
-                    <span>Movies</span>
+                    <span style={{color : "black"}}>Movies</span>
                 </button>
                 <button className="icon" type="button" onClick={() => handleClick('technology')}>
                     <FaRobot />
-                    <span>Technology</span>
+                    <span style={{color : "black"}}>Technology</span>
                 </button>
                 <button className="icon" type="button" onClick={() => handleClick('science')}>
                     <MdScience />
-                    <span>Science</span>
+                    <span style={{color : "black"}}>Science</span>
                 </button>
             </div>
         </section>
