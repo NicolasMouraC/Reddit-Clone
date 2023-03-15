@@ -35,7 +35,7 @@ const NewPosts = () => {
                 <Row>
                     {isLoaded ? newPosts.map(el => {
                         return (
-                            <Col sm={6} md={3}>
+                            <Col sm={6} md={3} key={el.data.title}>
                                 <NewPost
                                         title={el.data.title}
                                         imgSrc={el.data.url}
