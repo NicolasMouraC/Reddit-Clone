@@ -26,6 +26,7 @@ Finally, type:
 To initiallize the server on localhost.
 
 ### 📌 Version changes
+* 1.0.1 - Improved acessibility rating through color update
 * 1.0.0 - Main function developed, all components now have working functions
 * 0.4.2 - Posts skeleton on load added
 * 0.4.1 - New subjects added
