@@ -1,15 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Roboto:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto), url("./fonts/Roboto/Roboto-Light.ttf");
+  font-weight: 400;
+}
 
-/*font-family: 'IBM Plex Sans', sans-serif;
-font-family: 'Roboto', sans-serif;
-font-family: 'Noto Sans*/
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto), url("./fonts/Roboto/Roboto-Regular.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto), url("./fonts/Roboto/Roboto-Medium.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto), url("./fonts/Roboto/Roboto-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto), url("./fonts/Roboto/Roboto-Black.ttf");
+  font-weight: 800;
+}
 
 :root{
   --sky-400: rgb(14 165 233);
   --sky-500: rgb(14 165 233);
   --sky-600: rgb(2 132 199);
   --sky-700: rgb(3 105 161);
+  --main-color: #476EE6;
+  --secondary-color: #47BEE6;
+  --terciary-color: #6F47E6;
+  --background-color: #FFFFFF;
 }
 
 * {
@@ -26,7 +53,7 @@ font-family: 'Noto Sans*/
                         "toolbar main main";
   grid-template-columns: 1fr 5fr 1fr;
   font-family: 'Roboto', sans-serif;
-  background-color: #DAE0E7;
+  background-color: var(--background-color);
 }
 
 span {
@@ -48,7 +75,6 @@ header {
 }
 
 .title {
-  font-family: 'IBM Plex Sans', sans-serif;
   font-size: calc(1rem + 0.325vw);
   margin: 0 0 0 10px;
 }
@@ -58,8 +84,18 @@ header {
   align-items: center;
 }
 
+.logo-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 90px;
+  background-image: url('./images/RedditMinimal.webp');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
 .minimal {
-  color: blue;
+  color: var(--main-color);
   font-size: inherit;
 }
 
@@ -167,20 +203,18 @@ header {
   bottom: 0;
   display: flex;
   flex-direction: column;
-  font-family: 'Noto Sans';
   color: white;
 }
 
 .new-post-title {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 22px;
 }
 
 .new-post-description {
-  font-family: 'Noto Sans', Arial,sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 18px;
   margin-bottom: 8px;
   overflow: hidden;
@@ -204,11 +238,11 @@ header {
   font-weight: bolder;
   font-size: 16px;
   margin-bottom: 10px;
-  color: var(--sky-600);
+  color: var(--main-color);
 }
 
 .post {
-  background-color: #f2f8fc;
+  background-color: var(--secondary-color);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 20px 40px 20px 80px;
   border-radius: 4px;
@@ -219,6 +253,7 @@ header {
 
 .post-community {
   display: flex;
+  font-weight: 700;
   align-items: center;
   gap: 10px;
   border-radius: 10px;
@@ -232,6 +267,7 @@ header {
 .post-title {
   word-break: break-word;
   margin-bottom: 5px;
+  font-weight: 800;
   font-size: 18px;
 }
 
@@ -252,6 +288,7 @@ header {
 
 .post-description {
   display: flex;
+  font-weight: 700;
   font-size: 12px;
   justify-content: space-between;
 }
@@ -274,7 +311,7 @@ header {
 }
 
 .post-description-author {
-  color: var(--sky-600);
+  color: var(--terciary-color);
 }
 
 .post-vote-arrows {
@@ -285,7 +322,7 @@ header {
   top: 0;
   left: 0;
   margin: 18px 0 0 18px;
-  color: var(--sky-500);
+  color: var(--terciary-color);
 }
 
 .post-vote-arrow-button {
@@ -299,7 +336,8 @@ header {
 
 .post-vote-arrows-votes {
   font-size: 14px;
-  color: var(--sky-700);
+  color: #000000;
+  font-weight: 700;
 }
 
 

@@ -6,7 +6,8 @@ import { BsReddit } from 'react-icons/bs'
 import { useDispatch, useSelector } from "react-redux";
 import { selectTopic } from "../slices/TopicsSlice.js";
 import { toggleIsLoaded, getPost } from "../slices/PostsSlice.js";
-import { fetchData } from '../Utils.js'
+import { fetchData } from '../Utils.js';
+import Logo from './images/RedditMinimal.webp';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -32,7 +33,7 @@ const Header = () => {
             <Container fluid='true' />
                 <Row>
                     <Col className="logo" md={4} sm={12} >
-                        <BsReddit size='2em' color="blue" />
+                        <div className="logo-image"></div>
                         <h1 className="title">Redd<span className="minimal">i</span>t <span className="minimal">Minimal</span></h1>
                     </Col>
                     <Col className="header-input" md={8} sm={12} >
