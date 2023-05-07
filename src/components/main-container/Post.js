@@ -20,15 +20,17 @@ const Post = (props) => {
                 {title}
             </div>
 
-            <div className="post-img">
-                {isVideo ? videoElement(videoUrl) : checkIfIsImage(imgSrc) ? imageElement(imgSrc) : commentsElement(redditCommentsLink)}
+            <div className="post-content">
+                <div className="post-content-info">
+                    {isVideo ? videoElement(videoUrl) : checkIfIsImage(imgSrc) ? imageElement(imgSrc) : commentsElement(redditCommentsLink)}
+                </div>
                 <hr />
                 <div className="post-description">
                     <span>Posted by <span className="post-description-author">{author}</span></span>
                     <span>{utcToDate(utc)} Hours ago</span>
                     <a href={"https://reddit.com" + redditCommentsLink}>
                         <button className="comments-icon" type="button">
-                            <MdComment color="rgb(14 165 233)"/>{comments}
+                            <MdComment color="#47BEE6"/>{comments}
                         </button>
                     </a>
                 </div>
