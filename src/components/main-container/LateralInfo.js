@@ -1,10 +1,16 @@
 import React from "react";
-import { BsLinkedin, BsGithub } from 'react-icons/bs';
+import { BsLinkedin, BsGithub, BsFillBriefcaseFill } from 'react-icons/bs';
 
 const LateralInfo = () => {
     return (
         <section className="lateral-bar">
             <div className="lateral-bar-info">
+                <a href="https://nicolasmoura.online" target="_blank" rel="noreferrer" className="lateral-bar-button">
+                    <button type="button" className="icon">
+                        <BsFillBriefcaseFill />
+                        <span>Portfolio</span>
+                    </button>
+                </a>
                 <a href="https://github.com/NicolasMouraC" target="_blank" rel="noreferrer" className="lateral-bar-button">
                     <button type="button" className="icon">
                         <BsGithub />
