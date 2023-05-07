@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdSportsTennis } from 'react-icons/md';
 import { IoGameController } from 'react-icons/io5';
 import { AiOutlineStock } from 'react-icons/ai';
@@ -16,9 +16,11 @@ import { useDispatch } from "react-redux";
 import { setNewTopic } from "../slices/TopicsSlice.js";
 
 const ToolBar = () => {
+    const [currentCategory, setCurrentCategory] = useState("popular");
     const dispatch = useDispatch();
 
     const handleClick = (newTopic) => {
+        setCurrentCategory(newTopic)
         dispatch(setNewTopic({ newTopic: newTopic }));
     } 
 
@@ -26,60 +28,60 @@ const ToolBar = () => {
         <section className='toolbar'>
             <div className="category">
                 Home
-                <button className="icon" type="button" onClick={() => handleClick('popular')}>
+                <button className={"icon " + (currentCategory === "popular" ? "active" : "")} type="button" onClick={() => handleClick('popular')}>
                     <FaHotjar />
-                    <span style={{color : "black"}}>Popular</span>
+                    <span>Popular</span>
                 </button>
             </div>
             <div className="category">
                 Topics
-                <button className="icon" type="button" onClick={() => handleClick('sports')}>
+                <button className={"icon " + (currentCategory === "sports" ? "active" : "")} type="button" onClick={() => handleClick('sports')}>
                     <MdSportsTennis />
-                    <span style={{color : "black"}}>Sports</span>
+                    <span>Sports</span>
                 </button>
-                <button className="icon" type="button" onClick={() => handleClick('gaming')}>
+                <button className={"icon " + (currentCategory === "gaming" ? "active" : "")} type="button" onClick={() => handleClick('gaming')}>
                     <IoGameController />
-                    <span style={{color : "black"}}>Gaming</span>
+                    <span>Gaming</span>
                 </button>
-                <button className="icon" type="button" onClick={() => handleClick('business')}>
+                <button className={"icon " + (currentCategory === "business" ? "active" : "")} type="button" onClick={() => handleClick('business')}>
                     <AiOutlineStock />
-                    <span style={{color : "black"}}>Business</span>
+                    <span>Business</span>
                 </button>
-                <button className="icon" type="button" onClick={() => handleClick('crypto')}>
+                <button className={"icon " + (currentCategory === "crypto" ? "active" : "")} type="button" onClick={() => handleClick('crypto')}>
                     <BiBitcoin />
-                    <span style={{color : "black"}}>Crypto</span>
+                    <span>Crypto</span>
                 </button>
-                <button className="icon" type="button" onClick={() => handleClick('programming')}>
+                <button className={"icon " + (currentCategory === "programming" ? "active" : "")} type="button" onClick={() => handleClick('programming')}>
                     <GiComputing />
-                    <span style={{color : "black"}}>Programming</span>
+                    <span>Programming</span>
                 </button>
-                <button className="icon" type="button" onClick={() => handleClick('celebrities')}>
+                <button className={"icon " + (currentCategory === "celebrities" ? "active" : "")} type="button" onClick={() => handleClick('celebrities')}>
                     <AiFillStar />
-                    <span style={{color : "black"}}>Celebrities</span>
+                    <span>Celebrities</span>
                 </button>
-                <button className="icon" type="button" onClick={() => handleClick('anime')}>
+                <button className={"icon " + (currentCategory === "anime" ? "active" : "")} type="button" onClick={() => handleClick('anime')}>
                     <GiDango />
-                    <span style={{color : "black"}}>Anime</span>
+                    <span>Anime</span>
                 </button>
-                <button className="icon" type="button" onClick={() => handleClick('military')}>
+                <button className={"icon " + (currentCategory === "military" ? "active" : "")} type="button" onClick={() => handleClick('military')}>
                     <MdOutlineMilitaryTech />
-                    <span style={{color : "black"}}>Military</span>
+                    <span>Military</span>
                 </button>
-                <button className="icon" type="button" onClick={() => handleClick('music')}>
+                <button className={"icon " + (currentCategory === "music" ? "active" : "")} type="button" onClick={() => handleClick('music')}>
                     <FaMusic />
-                    <span style={{color : "black"}}>Music</span>
+                    <span>Music</span>
                 </button>
-                <button className="icon" type="button" onClick={() => handleClick('movies')}>
+                <button className={"icon " + (currentCategory === "movies" ? "active" : "")} type="button" onClick={() => handleClick('movies')}>
                     <BiCameraMovie />
-                    <span style={{color : "black"}}>Movies</span>
+                    <span>Movies</span>
                 </button>
-                <button className="icon" type="button" onClick={() => handleClick('technology')}>
+                <button className={"icon " + (currentCategory === "technology" ? "active" : "")} type="button" onClick={() => handleClick('technology')}>
                     <FaRobot />
-                    <span style={{color : "black"}}>Technology</span>
+                    <span>Technology</span>
                 </button>
-                <button className="icon" type="button" onClick={() => handleClick('science')}>
+                <button className={"icon " + (currentCategory === "science" ? "active" : "")} type="button" onClick={() => handleClick('science')}>
                     <MdScience />
-                    <span style={{color : "black"}}>Science</span>
+                    <span>Science</span>
                 </button>
             </div>
         </section>

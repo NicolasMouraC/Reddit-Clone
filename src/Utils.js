@@ -1,12 +1,12 @@
+import ReactPlayer from 'react-player'
+
 export const checkIfIsImage = (imgSrc) => {
     return (imgSrc.match(/\.(jpeg|jpg|gif|png)$/) != null)
 }
 
 export const videoElement = (videoUrl) => {
     return (
-            <video controls>
-                <source src={videoUrl}/>
-            </video>
+        <ReactPlayer url={videoUrl} controls={true} volume={1} width={'100%'}/>
     )
 }
 

@@ -1,13 +1,8 @@
 import React, { useRef } from "react";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { BsReddit } from 'react-icons/bs'
 import { useDispatch, useSelector } from "react-redux";
 import { selectTopic } from "../slices/TopicsSlice.js";
 import { toggleIsLoaded, getPost } from "../slices/PostsSlice.js";
 import { fetchData } from '../Utils.js';
-import Logo from './images/RedditMinimal.webp';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -30,21 +25,18 @@ const Header = () => {
 
     return (
         <header>
-            <Container fluid='true' />
-                <Row>
-                    <Col className="logo" md={4} sm={12} >
-                        <div className="logo-image"></div>
-                        <h1 className="title">Redd<span className="minimal">i</span>t <span className="minimal">Minimal</span></h1>
-                    </Col>
-                    <Col className="header-input" md={8} sm={12} >
-                        <input
-                            ref={inputRef}
-                            placeholder="Search Reddit Minimal"
-                            onChange={handleChange} 
-                            type='text' 
-                            className="searchBar" />
-                    </Col>
-                </Row>
+            <div className="logo">
+                <div className="logo-image"></div>
+                <h1 className="title">Redd<span className="minimal">i</span>t <span className="minimal">Minimal</span></h1>
+            </div>
+            <div className="header-input">
+                <input
+                    ref={inputRef}
+                    placeholder="Search Reddit Minimal"
+                    onChange={handleChange} 
+                    type='text' 
+                    className="searchBar" />
+            </div>
       </header>
     )
 }
