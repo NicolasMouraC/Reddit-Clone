@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/Reddit-Clone/static/css/main.32aea530.css",
-    "main.js": "/Reddit-Clone/static/js/main.d0145081.js",
+    "main.css": "/Reddit-Clone/static/css/main.f3e09e71.css",
+    "main.js": "/Reddit-Clone/static/js/main.348ec734.js",
+    "static/media/Roboto-Medium.ttf": "/Reddit-Clone/static/media/Roboto-Medium.2699aefade440f0e338f.ttf",
+    "static/media/Roboto-Regular.ttf": "/Reddit-Clone/static/media/Roboto-Regular.160d7a6ac26376e5e977.ttf",
+    "static/media/Roboto-Black.ttf": "/Reddit-Clone/static/media/Roboto-Black.54a3321c780d7b357843.ttf",
+    "static/media/Roboto-Bold.ttf": "/Reddit-Clone/static/media/Roboto-Bold.35eab922fdbe4b5324d4.ttf",
+    "static/media/Roboto-Light.ttf": "/Reddit-Clone/static/media/Roboto-Light.67102731a93fd827b382.ttf",
+    "static/media/RedditMinimal.webp": "/Reddit-Clone/static/media/RedditMinimal.fcad2cd921915737ba94.webp",
     "index.html": "/Reddit-Clone/index.html",
-    "main.32aea530.css.map": "/Reddit-Clone/static/css/main.32aea530.css.map",
-    "main.d0145081.js.map": "/Reddit-Clone/static/js/main.d0145081.js.map"
+    "main.f3e09e71.css.map": "/Reddit-Clone/static/css/main.f3e09e71.css.map",
+    "main.348ec734.js.map": "/Reddit-Clone/static/js/main.348ec734.js.map"
   },
   "entrypoints": [
-    "static/css/main.32aea530.css",
-    "static/js/main.d0145081.js"
+    "static/css/main.f3e09e71.css",
+    "static/js/main.348ec734.js"
   ]
 }
