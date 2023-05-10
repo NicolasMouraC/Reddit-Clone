@@ -59,7 +59,6 @@ span {
   font-size: 14px;
 }
 
-
 /*-------------*/
 /* Header Css */
 /*-------------*/
@@ -76,7 +75,7 @@ header {
 }
 
 .title {
-  font-size: calc(1rem + 0.325vw);
+  font-size: 26px;
   margin: 0 0 0 10px;
   font-weight: 800;
 }
@@ -104,14 +103,28 @@ header {
 .header-input {
   display: flex;
   width: 70%;
+  height: 90%;
 }
 
-.searchBar {
+.header-icon {
+  display: flex;
+  align-items: center;
+  border-radius: 20px 0 0 20px;
+  padding: 0 10px;
+  color: var(--secondary-color);
+  font-weight: 700;
+  background-color: var(--background-color);
+  height: inherit;
+}
+
+.header-search {
   width: 70%;
-  border-radius: 20px;
+  border-radius: 0 20px 20px 0;
   border: 1px;
   color: var(--secondary-color);
   font-weight: 700;
+  background-color: var(--background-color);
+  height: inherit;
 }
 
 /*-------------*/
@@ -272,10 +285,6 @@ header {
   margin-bottom: 5px;
   font-weight: 800;
   font-size: 18px;
-}
-
-
-.post-content-info {
 }
 
 .post-content-info > video {

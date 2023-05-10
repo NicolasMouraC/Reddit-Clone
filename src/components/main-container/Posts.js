@@ -19,6 +19,12 @@ const Posts = () => {
             dispatch(toggleIsLoaded());
             const posts = await fetchData(`https://www.reddit.com/r/${topic}.json`);
             dispatch(getPost({ posts: posts }));
+
+            window.scroll({
+                top: 0, 
+                left: 0, 
+                behavior: 'smooth' 
+            });
         }
 
         data(topic);
